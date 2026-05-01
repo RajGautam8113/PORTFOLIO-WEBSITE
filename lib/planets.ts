@@ -1,0 +1,158 @@
+import type { SectionId } from "./portfolio-data"
+
+export type PlanetConfig = {
+  name: string
+  radius: number
+  color: string
+  emissive: string
+  emissiveIntensity: number
+  roughness: number
+  metalness: number
+  hasRings: boolean
+  ringColor: string
+  ringInner: number
+  ringOuter: number
+  atmosphereColor: string
+  atmosphereOpacity: number
+  rotationSpeed: number
+  isStar: boolean
+}
+
+export const PLANETS: Record<SectionId, PlanetConfig> = {
+  home: {
+    name: "Earth",
+    radius: 1.6,
+    color: "#1e88e5",
+    emissive: "#0a3d62",
+    emissiveIntensity: 0.25,
+    roughness: 0.85,
+    metalness: 0.1,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#4fc3f7",
+    atmosphereOpacity: 0.35,
+    rotationSpeed: 0.15,
+    isStar: false,
+  },
+  about: {
+    name: "Moon",
+    radius: 1.2,
+    color: "#cfd2d6",
+    emissive: "#3a3d42",
+    emissiveIntensity: 0.08,
+    roughness: 0.95,
+    metalness: 0.05,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#9aa0a6",
+    atmosphereOpacity: 0.0,
+    rotationSpeed: 0.08,
+    isStar: false,
+  },
+  skills: {
+    name: "Mars",
+    radius: 1.4,
+    color: "#c1440e",
+    emissive: "#4a1404",
+    emissiveIntensity: 0.2,
+    roughness: 0.9,
+    metalness: 0.1,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#ff7043",
+    atmosphereOpacity: 0.18,
+    rotationSpeed: 0.2,
+    isStar: false,
+  },
+  experience: {
+    name: "Jupiter",
+    radius: 2.1,
+    color: "#d8a26b",
+    emissive: "#6b3e1a",
+    emissiveIntensity: 0.22,
+    roughness: 0.7,
+    metalness: 0.15,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#f4c27a",
+    atmosphereOpacity: 0.25,
+    rotationSpeed: 0.35,
+    isStar: false,
+  },
+  projects: {
+    name: "Saturn",
+    radius: 1.8,
+    color: "#e0c79a",
+    emissive: "#4a3a1f",
+    emissiveIntensity: 0.18,
+    roughness: 0.65,
+    metalness: 0.2,
+    hasRings: true,
+    ringColor: "#f0d9a8",
+    ringInner: 2.4,
+    ringOuter: 4.2,
+    atmosphereColor: "#f5deb3",
+    atmosphereOpacity: 0.22,
+    rotationSpeed: 0.28,
+    isStar: false,
+  },
+  education: {
+    name: "Neptune",
+    radius: 1.55,
+    color: "#3457d5",
+    emissive: "#0d1f5c",
+    emissiveIntensity: 0.3,
+    roughness: 0.55,
+    metalness: 0.25,
+    hasRings: true,
+    ringColor: "#6f9cf5",
+    ringInner: 2.0,
+    ringOuter: 2.6,
+    atmosphereColor: "#5b8def",
+    atmosphereOpacity: 0.32,
+    rotationSpeed: 0.18,
+    isStar: false,
+  },
+  certifications: {
+    name: "Venus",
+    radius: 1.5,
+    color: "#e8b96a",
+    emissive: "#6b4a14",
+    emissiveIntensity: 0.35,
+    roughness: 0.4,
+    metalness: 0.15,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#f7d68a",
+    atmosphereOpacity: 0.45,
+    rotationSpeed: 0.12,
+    isStar: false,
+  },
+  contact: {
+    name: "Sun",
+    radius: 2.0,
+    color: "#ffb347",
+    emissive: "#ff8c00",
+    emissiveIntensity: 1.6,
+    roughness: 0.3,
+    metalness: 0.0,
+    hasRings: false,
+    ringColor: "#ffffff",
+    ringInner: 0,
+    ringOuter: 0,
+    atmosphereColor: "#ffd27a",
+    atmosphereOpacity: 0.55,
+    rotationSpeed: 0.1,
+    isStar: true,
+  },
+}
