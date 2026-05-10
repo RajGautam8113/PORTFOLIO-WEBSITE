@@ -1,41 +1,49 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { ArrowDown, Download, Github, Linkedin, Mail, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { PROFILE } from "@/lib/portfolio-data"
-import { useSection } from "@/lib/section-context"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowDown,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { PROFILE } from "@/lib/portfolio-data";
+import { useSection } from "@/lib/section-context";
 
 const ROLES = [
   "Software Engineer",
   "AI/ML Developer",
   "Aspiring Project Manager",
-]
+];
 
 export function HeroSection() {
-  const { scrollToSection } = useSection()
-  const [roleIdx, setRoleIdx] = useState(0)
-  const [displayed, setDisplayed] = useState("")
-  const [deleting, setDeleting] = useState(false)
+  const { scrollToSection } = useSection();
+  const [roleIdx, setRoleIdx] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const current = ROLES[roleIdx]
-    let timeout: ReturnType<typeof setTimeout>
-
+    const current = ROLES[roleIdx];
+    let timeout: ReturnType<typeof setTimeout>;
     if (!deleting && displayed.length < current.length) {
-      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
+      timeout = setTimeout(
+        () => setDisplayed(current.slice(0, displayed.length + 1)),
+        80,
+      );
     } else if (!deleting && displayed.length === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 1800)
+      timeout = setTimeout(() => setDeleting(true), 1800);
     } else if (deleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45)
+      timeout = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 45);
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false)
-      setRoleIdx((i) => (i + 1) % ROLES.length)
+      setDeleting(false);
+      setRoleIdx((i) => (i + 1) % ROLES.length);
     }
-
-    return () => clearTimeout(timeout)
-  }, [displayed, deleting, roleIdx])
+    return () => clearTimeout(timeout);
+  }, [displayed, deleting, roleIdx]);
 
   return (
     <section
@@ -61,15 +69,15 @@ export function HeroSection() {
             </span>
           </h1>
 
-          {/* Typing animation */}
           <div className="mt-4 h-8 font-mono text-lg text-amber-300 md:text-xl">
             {displayed}
             <span className="animate-pulse">|</span>
           </div>
 
           <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-foreground/75 md:text-lg">
-            I build scalable web &amp; AI/ML applications, lead cross-functional teams, and ship
-            measurable outcomes — from forensic AI systems to crop intelligence platforms.
+            I build scalable web &amp; AI/ML applications, lead cross-functional
+            teams, and ship measurable outcomes — from forensic AI systems to
+            crop intelligence platforms.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-foreground/60">
@@ -97,8 +105,6 @@ export function HeroSection() {
             >
               Contact Me
             </Button>
-
-            {/* Resume Download Button */}
             <a href="/resume.pdf" download="Raj_Kamal_Gautam_Resume.pdf">
               <Button
                 size="lg"
@@ -109,9 +115,8 @@ export function HeroSection() {
                 Resume
               </Button>
             </a>
-
             <div className="ml-auto flex items-center gap-2">
-              
+              <a
                 href={PROFILE.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -120,7 +125,7 @@ export function HeroSection() {
               >
                 <Github className="h-4 w-4" />
               </a>
-              
+              <a
                 href={PROFILE.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -147,31 +152,36 @@ export function HeroSection() {
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-purple-400" />
                 <span>
-                  <span className="text-foreground">Data Analytics Intern</span> @ Pratinik Infotech • May 2026
+                  <span className="text-foreground">Data Analytics Intern</span>{" "}
+                  @ Pratinik Infotech • May 2026
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-300" />
                 <span>
-                  <span className="text-foreground">B.Tech CSE</span> @ Shri Ram Institute • CGPA 7.04
+                  <span className="text-foreground">B.Tech CSE</span> @ Shri Ram
+                  Institute • CGPA 7.04
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-sky-400" />
                 <span>
-                  <span className="text-foreground">SDE Intern</span> @ Acrostic IT Solutions • Jan–Nov 2024
+                  <span className="text-foreground">SDE Intern</span> @ Acrostic
+                  IT Solutions • Jan–Nov 2024
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                 <span>
-                  <span className="text-foreground">Cybersecurity Intern</span> @ Cisco • Apr–Jun 2024
+                  <span className="text-foreground">Cybersecurity Intern</span>{" "}
+                  @ Cisco • Apr–Jun 2024
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-rose-400" />
                 <span>
-                  <span className="text-foreground">Project Lead</span> • AI Forensic Analyzer &amp; Crop Intelligence
+                  <span className="text-foreground">Project Lead</span> • AI
+                  Forensic Analyzer &amp; Crop Intelligence
                 </span>
               </li>
             </ul>
@@ -192,10 +202,12 @@ export function HeroSection() {
         aria-label="Scroll to about"
       >
         <span className="flex flex-col items-center gap-2">
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em]">scroll</span>
+          <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
+            scroll
+          </span>
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </span>
       </motion.button>
     </section>
-  )
+  );
 }
