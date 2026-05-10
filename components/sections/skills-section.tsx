@@ -1,11 +1,23 @@
 "use client"
-
 import { motion } from "framer-motion"
 import { Code2, Layers, Database, Wrench, BarChart3 } from "lucide-react"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { SKILLS } from "@/lib/portfolio-data"
 
 const ICONS = [Code2, Layers, Database, Wrench, BarChart3]
+
+const SKILL_LEVELS: Record<string, number> = {
+  // Languages
+  Python: 90, JavaScript: 75, Java: 65, "C++": 65, SQL: 80,
+  // Frameworks
+  Flask: 85, FastAPI: 75, TensorFlow: 70, PyTorch: 72, "Scikit-learn": 78, OpenCV: 68, spaCy: 72,
+  // Databases
+  MySQL: 80, SQLite3: 75,
+  // DevOps
+  Docker: 72, Git: 85, GitHub: 85, GitLab: 70, Ngrok: 65,
+  // Analytics
+  "Power BI": 75, "Excel (Advanced)": 78,
+}
 
 export function SkillsSection() {
   return (
@@ -36,15 +48,27 @@ export function SkillsSection() {
                   {group.category}
                 </h3>
               </div>
-              <ul className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-md border border-white/10 bg-black/20 px-3 py-1 text-xs font-medium text-foreground/85 transition group-hover:border-white/20"
-                  >
-                    {item}
-                  </li>
-                ))}
+              <ul className="space-y-3">
+                {group.items.map((item) => {
+                  const level = SKILL_LEVELS[item] ?? 70
+                  return (
+                    <li key={item}>
+                      <div className="mb-1 flex items-center justify-between">
+                        <span className="text-xs font-medium text-foreground/85">{item}</span>
+                        <span className="font-mono text-[10px] text-foreground/50">{level}%</span>
+                      </div>
+                      <div className="h-1.5 w-full rounded-full bg-white/10">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+                          className="h-1.5 rounded-full bg-gradient-to-r from-amber-300 to-orange-400"
+                        />
+                      </div>
+                    </li>
+                  )
+                })}
               </ul>
             </motion.div>
           )
