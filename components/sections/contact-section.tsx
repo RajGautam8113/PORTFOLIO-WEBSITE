@@ -139,7 +139,7 @@ export function ContactSection() {
                   value={form.name}
                   onChange={handleChange}
                   required
-                  placeholder="Raj Kamal"
+                  placeholder="Raj Gautam"
                   className={inputClass}
                 />
               </div>
