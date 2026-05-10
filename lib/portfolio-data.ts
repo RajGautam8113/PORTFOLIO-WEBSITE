@@ -111,31 +111,24 @@ export const PROJECTS = [
     role: "Project Lead",
     location: "Jabalpur",
     period: "2024",
-    tagline:
-      "NLP + Computer Vision system that cross-verifies forensic text reports against physical evidence.",
+    tagline: "NLP + Computer Vision system that cross-verifies forensic text reports against physical evidence.",
+    demo: "https://forensic-report-analyzer-1.onrender.com",
+    github: "https://github.com/RajGautam8113",
     bullets: [
       "Developed an AI-based system using NLP and Computer Vision to analyze forensic reports and physical evidence, achieving high accuracy cross-verification between textual reports and visual data through iterative testing.",
       "Integrated spaCy, PyTorch, and EasyOCR with a Flask backend and interactive Three.js frontend.",
       "Containerized using Docker and deployed via Ngrok for scalable, portable architecture.",
     ],
-    stack: [
-      "Python",
-      "spaCy",
-      "PyTorch",
-      "EasyOCR",
-      "Flask",
-      "Three.js",
-      "Docker",
-      "Ngrok",
-    ],
+    stack: ["Python", "spaCy", "PyTorch", "EasyOCR", "Flask", "Three.js", "Docker", "Ngrok"],
   },
   {
     name: "Crop Intelligence Platform",
     role: "Project Lead",
     location: "Jabalpur",
     period: "2023 – 2024",
-    tagline:
-      "Full-stack ML platform for crop yield prediction, disease detection, and price forecasting.",
+    tagline: "Full-stack ML platform for crop yield prediction, disease detection, and price forecasting.",
+    demo: "",
+    github: "https://github.com/RajGautam8113",
     bullets: [
       "Built a full-stack ML platform for crop yield prediction, disease detection, and price forecasting; improved model accuracy by 12% using feature engineering and optimized preprocessing techniques.",
       "Developed a real-time analytics dashboard using Flask, MySQL, and Power BI for stakeholder decision support.",
@@ -143,7 +136,7 @@ export const PROJECTS = [
     ],
     stack: ["Python", "Flask", "MySQL", "Power BI", "Scikit-learn", "Pandas"],
   },
-];
+]
 
 export const LEADERSHIP = [
   {
