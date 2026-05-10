@@ -33,7 +33,10 @@ export function ContactSection() {
     e.preventDefault();
     const { name, email, subject, message } = form;
     const body = `Hi Raj,%0A%0AMy name is ${encodeURIComponent(name)}.%0A%0A${encodeURIComponent(message)}%0A%0AReply to: ${encodeURIComponent(email)}`;
-    window.location.href = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const mailtoLink = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const a = document.createElement("a");
+    a.href = mailtoLink;
+    a.click();
     setStatus("sent");
     setTimeout(() => {
       setStatus("idle");
