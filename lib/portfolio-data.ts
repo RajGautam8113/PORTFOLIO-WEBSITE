@@ -6,7 +6,7 @@ export type SectionId =
   | "projects"
   | "education"
   | "certifications"
-  | "contact"
+  | "contact";
 
 export const SECTIONS: { id: SectionId; label: string; planet: string }[] = [
   { id: "home", label: "Home", planet: "Earth" },
@@ -17,7 +17,7 @@ export const SECTIONS: { id: SectionId; label: string; planet: string }[] = [
   { id: "education", label: "Education", planet: "Neptune" },
   { id: "certifications", label: "Certifications", planet: "Venus" },
   { id: "contact", label: "Contact", planet: "Sun" },
-]
+];
 
 export const PROFILE = {
   name: "Raj Kamal Gautam",
@@ -36,7 +36,7 @@ export const PROFILE = {
     { name: "Hindi", level: "Native" },
     { name: "German", level: "Basic (A2)" },
   ],
-}
+};
 
 export const SKILLS = [
   {
@@ -45,7 +45,15 @@ export const SKILLS = [
   },
   {
     category: "Frameworks & Libraries",
-    items: ["Flask", "FastAPI", "TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "spaCy"],
+    items: [
+      "Flask",
+      "FastAPI",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "OpenCV",
+      "spaCy",
+    ],
   },
   {
     category: "Databases",
@@ -59,9 +67,20 @@ export const SKILLS = [
     category: "Analytics & BI",
     items: ["Power BI", "Excel (Advanced)"],
   },
-]
+];
 
 export const EXPERIENCE = [
+  {
+    role: "Data Analytics Intern",
+    company: "Pratinik Infotech",
+    location: "Remote",
+    period: "May 2026 – July 2026",
+    bullets: [
+      "Selected for a 2-month intensive internship focused on Data Analytics and business intelligence solutions.",
+      "Leveraging analytical tools to process complex datasets and contribute to data-driven decision-making processes.",
+      "Collaborating with the technical team to improve data visualization and reporting efficiency.",
+    ],
+  },
   {
     role: "Software Development Intern",
     company: "Acrostic IT Solutions Pvt. Ltd.",
@@ -84,7 +103,7 @@ export const EXPERIENCE = [
       "Strengthened understanding of network security, risk identification, and mitigation strategies.",
     ],
   },
-]
+];
 
 export const PROJECTS = [
   {
@@ -92,20 +111,31 @@ export const PROJECTS = [
     role: "Project Lead",
     location: "Jabalpur",
     period: "2024",
-    tagline: "NLP + Computer Vision system that cross-verifies forensic text reports against physical evidence.",
+    tagline:
+      "NLP + Computer Vision system that cross-verifies forensic text reports against physical evidence.",
     bullets: [
       "Developed an AI-based system using NLP and Computer Vision to analyze forensic reports and physical evidence, achieving high accuracy cross-verification between textual reports and visual data through iterative testing.",
       "Integrated spaCy, PyTorch, and EasyOCR with a Flask backend and interactive Three.js frontend.",
       "Containerized using Docker and deployed via Ngrok for scalable, portable architecture.",
     ],
-    stack: ["Python", "spaCy", "PyTorch", "EasyOCR", "Flask", "Three.js", "Docker", "Ngrok"],
+    stack: [
+      "Python",
+      "spaCy",
+      "PyTorch",
+      "EasyOCR",
+      "Flask",
+      "Three.js",
+      "Docker",
+      "Ngrok",
+    ],
   },
   {
     name: "Crop Intelligence Platform",
     role: "Project Lead",
     location: "Jabalpur",
     period: "2023 – 2024",
-    tagline: "Full-stack ML platform for crop yield prediction, disease detection, and price forecasting.",
+    tagline:
+      "Full-stack ML platform for crop yield prediction, disease detection, and price forecasting.",
     bullets: [
       "Built a full-stack ML platform for crop yield prediction, disease detection, and price forecasting; improved model accuracy by 12% using feature engineering and optimized preprocessing techniques.",
       "Developed a real-time analytics dashboard using Flask, MySQL, and Power BI for stakeholder decision support.",
@@ -113,7 +143,7 @@ export const PROJECTS = [
     ],
     stack: ["Python", "Flask", "MySQL", "Power BI", "Scikit-learn", "Pandas"],
   },
-]
+];
 
 export const LEADERSHIP = [
   {
@@ -131,9 +161,10 @@ export const LEADERSHIP = [
   {
     role: "Hackathon Organizer",
     org: "Inter-college Hackathons",
-    detail: "Managed logistics, judging panels, and full event execution for inter-college hackathons.",
+    detail:
+      "Managed logistics, judging panels, and full event execution for inter-college hackathons.",
   },
-]
+];
 
 export const EDUCATION = [
   {
@@ -161,18 +192,20 @@ export const EDUCATION = [
     score: "Percentage: 72.6%",
     highlights: ["Strong foundation in mathematics and science"],
   },
-]
+];
 
 export const CERTIFICATIONS = [
   {
     name: "Salesforce AI Associate Certification",
     issuer: "Salesforce",
-    detail: "Foundational AI concepts, ethical AI use, and applied AI in the Salesforce ecosystem.",
+    detail:
+      "Foundational AI concepts, ethical AI use, and applied AI in the Salesforce ecosystem.",
   },
   {
     name: "Oracle AI Vector Search Certification",
     issuer: "Oracle",
-    detail: "Vector embeddings, similarity search, and AI-powered retrieval on Oracle Database.",
+    detail:
+      "Vector embeddings, similarity search, and AI-powered retrieval on Oracle Database.",
   },
   {
     name: "Python Programming Certification",
@@ -182,6 +215,7 @@ export const CERTIFICATIONS = [
   {
     name: "CCNA Certification",
     issuer: "Cisco",
-    detail: "Networking fundamentals, routing, switching, and network security essentials.",
+    detail:
+      "Networking fundamentals, routing, switching, and network security essentials.",
   },
-]
+];
