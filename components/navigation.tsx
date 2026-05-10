@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Menu, X, Rocket } from "lucide-react"
-import { useSection } from "@/lib/section-context"
-import { SECTIONS } from "@/lib/portfolio-data"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useSection } from "@/lib/section-context";
+import { SECTIONS } from "@/lib/portfolio-data";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function Navigation() {
-  const { activeSection, scrollToSection } = useSection()
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const { activeSection, scrollToSection } = useSection();
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleClick = (id: (typeof SECTIONS)[number]["id"]) => {
-    scrollToSection(id)
-    setOpen(false)
-  }
+    scrollToSection(id);
+    setOpen(false);
+  };
 
   return (
     <header
@@ -39,22 +39,30 @@ export function Navigation() {
           className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
           aria-label="Go to home"
         >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5">
-            <Rocket className="h-4 w-4 text-amber-300" />
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-300/40 bg-white/5 overflow-hidden">
+            <img
+              src="/profile.jpg"
+              alt="Raj Kamal Gautam"
+              className="h-full w-full object-cover rounded-full"
+            />
           </span>
-          <span className="font-mono text-sm tracking-widest text-foreground/90">RAJ.GAUTAM</span>
+          <span className="font-mono text-sm tracking-widest text-foreground/90">
+            RAJ.GAUTAM
+          </span>
         </button>
 
         <ul className="hidden items-center gap-1 md:flex">
           {SECTIONS.map((s) => {
-            const isActive = activeSection === s.id
+            const isActive = activeSection === s.id;
             return (
               <li key={s.id}>
                 <button
                   onClick={() => handleClick(s.id)}
                   className={cn(
                     "relative rounded-full px-3 py-1.5 text-xs font-medium uppercase tracking-wider transition-colors",
-                    isActive ? "text-foreground" : "text-foreground/60 hover:text-foreground/90",
+                    isActive
+                      ? "text-foreground"
+                      : "text-foreground/60 hover:text-foreground/90",
                   )}
                 >
                   {isActive && (
@@ -66,7 +74,7 @@ export function Navigation() {
                   <span className="relative">{s.label}</span>
                 </button>
               </li>
-            )
+            );
           })}
         </ul>
 
@@ -85,7 +93,7 @@ export function Navigation() {
         <div className="md:hidden border-t border-white/10 bg-background/85 backdrop-blur-xl">
           <ul className="flex flex-col gap-1 px-4 py-3">
             {SECTIONS.map((s) => {
-              const isActive = activeSection === s.id
+              const isActive = activeSection === s.id;
               return (
                 <li key={s.id}>
                   <button
@@ -98,14 +106,16 @@ export function Navigation() {
                     )}
                   >
                     <span className="uppercase tracking-wider">{s.label}</span>
-                    <span className="font-mono text-[10px] text-foreground/50">{s.planet}</span>
+                    <span className="font-mono text-[10px] text-foreground/50">
+                      {s.planet}
+                    </span>
                   </button>
                 </li>
-              )
+              );
             })}
           </ul>
         </div>
       )}
     </header>
-  )
+  );
 }
