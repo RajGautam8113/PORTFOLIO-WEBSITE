@@ -41,7 +41,7 @@ export function Navigation() {
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-amber-300/40 bg-white/5 overflow-hidden">
             <img
-              src="/profile.jpg"
+              src="/profile.jpeg"
               alt="Raj Kamal Gautam"
               className="h-full w-full object-cover rounded-full"
             />
